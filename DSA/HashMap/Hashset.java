@@ -37,6 +37,7 @@ public class Hashset {
        }
 
        //Iterator
+       @SuppressWarnings({ "raw type", "rawtypes" })
        Iterator it = set.iterator();
 
        //hasNext and Next function:

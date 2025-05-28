@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Hashmap",
+            "request": "launch",
+            "mainClass": "Hashmap",
+            "projectName": "HashMap_d1b10259"
+        },
+        {
+            "type": "java",
+            "name": "Hashset",
+            "request": "launch",
+            "mainClass": "Hashset",
+            "projectName": "HashMap_d1b10259"
+        },
+        {
+            "type": "java",
+            "name": "ImplementationOfHashMap",
+            "request": "launch",
+            "mainClass": "ImplementationOfHashMap",
+            "projectName": "HashMap_d1b10259"
+        },
+        {
+            "type": "java",
+            "name": "QuestionsRelatedToHash",
+            "request": "launch",
+            "mainClass": "QuestionsRelatedToHash",
+            "projectName": "HashMap_d1b10259"
+        }
+    ]
+}
