@@ -89,6 +89,41 @@ public class Trie {
 
         return true;
     }
+
+    public static int countNode(Node root){
+        if(root == null){
+            return 0;
+        }
+        int count = 0;
+        for(int i = 0; i < 26; i++){
+            if(root.childern[i] != null){
+                count += countNode(root.childern[i]);
+            }
+        }
+
+
+        return count+1;
+    }
+
+    public static String ans = "";
+
+    public static void longetWord(Node root, StringBuilder temp){
+        if(root == null){
+            return;
+        }
+        for(int i = 0; i < 26; i++){
+            if(root.childern[i] != null && root.childern[i].endOfWord == true){
+                temp.append((char)(i + 'a'));
+
+                if(temp.length() > ans.length()){
+                    ans = temp.toString();
+                }
+                longetWord(root.childern[i], temp);
+
+                temp.deleteCharAt(temp.length()-1);
+            }
+        }
+    }
     public static void main(String[] args) {
         //Uncomment this first comment to understant the Trie DS
         
@@ -157,7 +192,7 @@ public class Trie {
         
         
         
-        String words1[] = {"apple", "app", "mango", "man", "woman"};
+        /*String words1[] = {"apple", "app", "mango", "man", "woman"};
         String prefix = "moon";
 
         for(int i = 0; i < words1.length; i++){
@@ -165,5 +200,61 @@ public class Trie {
         }
 
         System.out.println(startsWith(prefix));
+        */
+
+      
+      
+      
+      
+        /*
+         * Count unique SubStrings [Microsoft, Google]
+         * 
+         * context: Given a string of length n of lowercase alphabet, we need 
+         *          to count total number of distinct substrings of the string
+         * 
+         * Example: str = "ababa"
+         * ans = 10
+         * 
+         * Note: Substring ---> all prefix of all suffix
+         */
+        
+        
+        
+        
+        
+         /*
+        String str = "ababa";
+        
+        for(int i = 0; i < str.length(); i++){
+            String suffix = str.substring(i);
+            insert(suffix);
+        }
+
+        System.out.println(countNode(root));
+        */
+
+
+
+
+        /*
+         * Longest word with all prefixes
+         * 
+         * context: find the longest string in words such that every prefix
+         *          of it is also in words
+         * 
+         * Example: words[] = {"a", "banana", "app", "ap", "apply", "apple"}
+         *          answer = "apple"
+         * 
+         * Note: if there are multiple answer than we will print the answer that 
+         *       is lexicographically smaller
+         */
+        String words[] = {"a", "banana", "app", "appl", "ap", "apply", "apple"};
+        for(int i = 0; i < words.length; i++){
+            insert(words[i]);
+        }
+
+        longetWord(root, new StringBuilder(""));
+        System.out.println(ans);
     }
+
 }
